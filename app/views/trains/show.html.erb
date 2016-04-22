@@ -1,0 +1,46 @@
+
+<div class="show">
+  <div class="row">
+    <div class="medium-6 columns">
+      <h2><%= @train.stock %></h2>
+      This train was last spotted at <%= @train.posts.last.location %>
+    </div>
+    <div class="medium-6 columns">
+      <%= image_tag @train.image %>
+    </div>
+  </div>
+
+
+  <br> <!-- Take out when styling -->
+  <br>
+
+
+
+
+  <div class="row">
+    <div class="medium-12 columns">
+      <h3>People who have spotted this train:</h3>
+    </div>
+  </div>
+  <% @train.posts.in_groups_of(2) do |group| %>
+  <div class="row" data-equalizer>
+    <% group.compact.each do |post| %>
+    <div class="medium-3 columns" data-equalizer-watch>
+      <%= image_tag post.image %>
+    </div>
+    <div class="medium-9 columns" data-equalizer-watch>
+     
+      <%= post.user.username %> saw this train at <%= post.location %> on <%= post.created_at.strftime("#{post.created_at.day.ordinalize} %B %Y") %>
+      <br>
+      <%= link_to post.title, post_path(post) %>
+     
+    <hr>
+    </div>
+    <% end %>
+
+  </div>
+  <% end %>
+
+</div>
+
+

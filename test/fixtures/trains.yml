@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock: MyString
+  line: MyString
+  location: MyString
+  platform: 1
+
+two:
+  stock: MyString
+  line: MyString
+  location: MyString
+  platform: 1
