@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users
-  root "statics#index"
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
+  root "statics#index"
 
   resources :posts
   resources :users

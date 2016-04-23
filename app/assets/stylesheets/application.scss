@@ -12,11 +12,11 @@
  *
  *= require_tree .
  *= require_self
- //= require foundation_and_overrides
+ *= require foundation_and_overrides
  /*= require foundation
 
  */
-
+ @import "foundation_and_overrides";
  @import url(https://fonts.googleapis.com/css?family=Raleway:600);
 
 body {
@@ -31,21 +31,17 @@ h1, h2, h3, h4, h5 ,h6 {
   color: #444;
 }
 
-h1 {
-  text-align: center; 
-}
-
-h3 {
-  text-align: center;
-}
 
 header {
-  padding: 0.8em 0;
+
   background: #efefef;
   h1 {
     margin: 0;
     text-align: left;
     font-size: 2rem;
+  }
+  span {
+    color: white;
   }
 }
 
@@ -53,4 +49,27 @@ header {
   h1, h2, h3, h4, h5 ,h6 {
     text-align: initial;
   }
+  h1 {
+    text-align: center; 
+  }
+
+  h3 {
+    text-align: center;
+  }
+
 }
+
+.page-header {
+  background: #1ab98f;
+  h1, h2, h3, h4, h5 ,h6 {
+    color: white;
+    text-align: center;
+  }
+}
+span a.current-user {
+  padding: 0 !important;
+}
+
+
+
+
