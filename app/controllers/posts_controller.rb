@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @class = @post.line.downcase.partition(" ").first
   end
 
   def new

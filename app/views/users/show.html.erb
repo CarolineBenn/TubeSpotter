@@ -1,7 +1,40 @@
-<div class="page-header">
+<div class="page-header <%= @class %>">
   <div class="row">
     <div class="medium-12 columns">
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+      <h4><%= @user.username %> // <%= @user.location %> // Points: <%= @user.points  %> </h4>
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="medium-12 columns">
+    <%= @user.first_name %> <%= @user.last_name %>'s latest posts:
+  </div>
+</div>
+
+
+<% if @user.posts.count == 0 %>
+  <div class="row">
+    <div class="medium-6 columns">
+      <p><%= @user.first_name %> hasn't got any posts yet :(</p>
+
+    </div>
+  </div>
+
+<% else %>
+
+  <% for post in @user.posts %>
+  <div class="row">
+    <div class="medium-4 columns">
+      <%= image_tag post.image %>
+    </div>
+    <div class="medium-8 columns">
+      <p><%= post.title %></p>    
+      <p><%= post.description %></p>
+      <%= link_to "Show", post_path(post), class: "button" %>   
+    </div>
+  </div>
+  <% end %>
+
+<% end %>
