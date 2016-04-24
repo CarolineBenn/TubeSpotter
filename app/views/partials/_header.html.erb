@@ -50,6 +50,8 @@
         <% if user_signed_in? %>
         <li><span>Hello <strong><%= link_to current_user.first_name, user_path(current_user), class: "current-user" %></strong></span></li>
         <% else %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <li><%= link_to "Register", new_user_registration_path %></li>
         <% end %>
       </ul>
     </section>

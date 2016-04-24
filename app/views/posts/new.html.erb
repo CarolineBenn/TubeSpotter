@@ -1,0 +1,27 @@
+<div class="page-header">
+  <div class="row">
+    <div class="medium-12 column">
+    <h2>Add a new post</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="medium-6 medium-centered columns">
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, autofocus: true, placeholder: "Title" %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image, autofocus: true, placeholder: "Image" %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description, autofocus: true, placeholder: "Description" %>
+
+  <%= f.label :train_id %>
+  <!-- How do I make this print out the rolling stock rather than just the train object?! (on a plane) -->
+  <%= f.collection_select :train_id, @train, :to_s, :to_s, include_blank: 'Please select:' %>
+
+<% end %>
+</div>
+</div>

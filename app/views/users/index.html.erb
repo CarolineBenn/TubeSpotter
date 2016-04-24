@@ -1,7 +1,7 @@
 <div class="page-header">
   <div class="row">
     <div class="medium-12 columns">
-      <h2>Meet the TrainSpotters</h2>
+      <h2>Meet the TubeSpotters</h2>
     </div>
   </div>
 </div>
@@ -12,9 +12,10 @@
 <div class="row" data-equalizer>
   <% group.compact.each do |user| %>
   <div class="medium-6 columns" data-equalizer-watch>
-    <%= image_tag user.photo %>
+    <%= link_to (image_tag user.photo), user_path(user) %>
     <br>
-    <b><%= user.first_name %> <%= user.last_name %></b>
+    <%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %>
+    <b><%=  %></b>
     <br>
     <% if user.posts.count > 0 %>
 

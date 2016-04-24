@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
+
+
+
   def index
-    @users = User.all
+    # .reverse so the newest member is first. Keeps things fresh.
+    @users = User.all.reverse
   end
 
 def show

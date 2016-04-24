@@ -1,7 +1,7 @@
 <div class="page-header">
   <div class="row">
     <div class="medium-12 columns">
-      <h1>Posts index</h1>
+      <h1>Recent Spots</h1>
     </div>
   </div>  
 </div>
@@ -10,8 +10,10 @@
 <div class="row">
   <% group.compact.each do |post| %>
   <div class="medium-4 columns">
-    <%= link_to (image_tag post.image), post_path(post) %>
-    <%= post.title %>
+    <%= link_to (image_tag post.image), post_path(post), class: "one-hundred" %>
+    <%= link_to post.title, post_path(post) %>
+    <br>
+    By <%= link_to post.user.username, user_path(post.user) %>
   </div>
   <% end %>
 </div>

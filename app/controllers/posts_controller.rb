@@ -10,7 +10,8 @@ class PostsController < ApplicationController
   end
 
   def new
-
+    @post = Post.new
+    @train = Train.all
   end
 
   def create
@@ -27,6 +28,12 @@ class PostsController < ApplicationController
 
   def delete
     
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :image, :description, :train_id, :line, :locatoin, :platform)    
   end
 
 

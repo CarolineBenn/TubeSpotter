@@ -34,8 +34,8 @@ h1, h2, h3, h4, h5 ,h6 {
 
 
 header {
-
   background: #efefef;
+  
   h1 {
     margin: 0;
     text-align: left;
@@ -44,6 +44,15 @@ header {
   span {
     color: white;
   }
+}
+
+.one-hundred {
+  width: 100%;
+  display: block;
+}
+
+.sign-up {
+  background: #efefef;
 }
 
 .show {
@@ -61,6 +70,8 @@ header {
 
 .page-header {
   background: #1ab98f;
+  margin-bottom: 3em;
+
   h1, h2, h3, h4, h5 ,h6 {
     color: white;
     text-align: center;
