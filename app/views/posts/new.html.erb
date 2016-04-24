@@ -22,8 +22,12 @@
   <!-- How do I make this print out the rolling stock rather than just the train object?! (on a plane) -->
   <%= f.collection_select :train_id, @train, :to_s, :to_s, include_blank: 'Please select:' %>
 
-  <%= f.label :location %>
+  <%= f.label :line %>
   <%= f.collection_select :line, @line, :to_s, :to_s, include_blank: 'Please select:' %>
+
+  <!-- It'd be great to use ransack for this: -->
+  <%= f.label :location %>
+  <%= f.text_field :location, autofocus: true, placeholder: "Description" %>
 
   <%= f.label :platform %>
   <%= f.number_field :platform, autofocus: true, max: 20, placeholder: "Platform" %>
