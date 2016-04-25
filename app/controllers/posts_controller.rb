@@ -7,6 +7,10 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @class = @post.line.downcase.partition(" ").first
+    @rolling_stock = Train.where(id: @post.train_id)
+
+
+
   end
 
   def new
