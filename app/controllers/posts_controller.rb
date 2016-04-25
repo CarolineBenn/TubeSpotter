@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @rolling_stock = Train.all
   end
 
   def show
