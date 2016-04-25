@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   resources :trains
+
+  get 'profile/edit', to: 'users#edit', as: 'edit_profile'
+
+  
 end

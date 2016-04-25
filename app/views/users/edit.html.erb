@@ -1,2 +1,76 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="page-header">
+  <div class="row">
+    <div class="medium-12 columns">
+      <h2>Edit Profile</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="medium-6 medium-centered columns">
+    <%= form_for @user do |f| %>
+
+    <div class="field">
+      <%= f.label :username %>
+      <%= f.text_field :username, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, autofocus: true %>
+    </div>
+
+    <div class="row">
+      <div class="medium-3 columns">
+        <div class="field">
+          <%= f.label :gender %>
+          <% @gender = ["M", "F", "Other"] %>
+          <%= f.collection_select :gender, @gender, :to_s, :to_s %>
+        </div>
+      </div>
+      <div class="medium-9 columns">
+        <div class="field">
+          <%= f.label :photo %>
+          <%= f.text_field :photo, autofocus: true %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :location %>
+      <%= f.text_field :location, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Submit", class: "button one-hundred" %>
+    </div>
+    <% end %>
+
+  </div>
+</div>
+
+
+
