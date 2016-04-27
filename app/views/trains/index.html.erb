@@ -9,7 +9,7 @@
 
 
 <% @trains.in_groups_of(2) do |group| %>
-<div class="row" data-equalizer>
+<div class="row spacer" data-equalizer>
   <% group.compact.each do |train| %>
   <div class="medium-6 columns" data-equalizer-watch>
     <%= link_to (image_tag train.image), train_path(train) %>

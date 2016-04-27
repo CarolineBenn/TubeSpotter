@@ -1,7 +1,7 @@
 class TrainsController < ApplicationController
 
   def index
-    @trains = Train.all
+    @trains = Train.all.order("id ASC")
   end
 
   def show
