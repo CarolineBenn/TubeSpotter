@@ -21,9 +21,9 @@
       <br>
       Platform <%= @post.platform %>
       <br>
-      <% for rolling_stock in @rolling_stock %>
-      <em><%= link_to rolling_stock.stock, train_path(rolling_stock) %></em>
-      <% end %>
+
+      <em><%= link_to @rolling_stock.stock, train_path(@rolling_stock) %></em>
+    
       <br>
     </div>
   </div>

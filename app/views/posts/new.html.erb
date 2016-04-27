@@ -19,8 +19,8 @@
   <%= f.text_field :description, autofocus: true, placeholder: "Description" %>
 
   <%= f.label :train_id %>
-  <!-- How do I make this print out the rolling stock rather than just the train object?! (on a plane) -->
-  <%= f.collection_select :train_id, @train, :to_s, :to_s, include_blank: 'Please select:' %>
+  <!-- http://www.rubydoc.info/docs/rails/4.1.7/ActionView%2FHelpers%2FFormOptionsHelper%3Acollection_select -->
+  <%= f.collection_select(:train_id, Train.all, :id, :stock, prompt: true) %>
 
   <%= f.label :line %>
   <%= f.collection_select :line, @line, :to_s, :to_s, include_blank: 'Please select:' %>
@@ -33,7 +33,7 @@
   <%= f.number_field :platform, autofocus: true, max: 20, placeholder: "Platform" %>
 
 
-  <%= f.submit 'Submit' , :class => 'button submit-button' %>
+  <%= f.submit 'Submit' , :class => 'button submit-button one-hundred' %>
 
 <% end %>
 </div>

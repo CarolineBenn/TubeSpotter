@@ -46,6 +46,10 @@ header {
   }
 }
 
+.row.spacer {
+  margin-bottom: 2em;
+}
+
 .one-hundred {
   width: 100%;
   display: block;
@@ -93,5 +97,6 @@ header {
 span a.current-user {
   padding: 0 !important;
 }
+
 
 

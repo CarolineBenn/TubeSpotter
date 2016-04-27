@@ -16,13 +16,35 @@ p3 = Post.create!(title: 'Lovely D78 Stock', image: 'http://tube-history-beta.ds
 p4 = Post.create!(title: 'Old D78 Stock at Turnham Green', image: 'http://tube-history-beta.dslack.co.uk/assets/images/rolling-stock/d78/refurbished.jpg', description: 'Spotted this bad boy this morning', user_id: 2, train_id: 3, line: 'District', location: 'Turnham Green', platform: 4, )
 
 
-t1 = Train.create!(stock: 'Track Recording Train', image: 'https://i.ytimg.com/vi/m9HgPB6GNjc/maxresdefault.jpg')
+t1 = Train.create!(stock: 'Track Recording Train', image: 'https://i.ytimg.com/vi/m9HgPB6GNjc/maxresdefault.jpg', points: 10)
 
-t2 = Train.create!(stock: 'C77', image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRsi65lAlhvlOqxwtr10yMCXKZVlu3Ydb1H3rIOv1Po2jbHt2InNw')
+t2 = Train.create!(stock: 'C77', image: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRsi65lAlhvlOqxwtr10yMCXKZVlu3Ydb1H3rIOv1Po2jbHt2InNw', points: 10)
 
-t3 = Train.create!(stock: 'D78', image: 'http://paulbigland.zenfolio.com/img/s/v-3/p187557820-3.jpg')
+t3 = Train.create!(stock: 'D78', image: 'http://paulbigland.zenfolio.com/img/s/v-3/p187557820-3.jpg', points: 2)
 
+t4 = Train.create(stock: '1972 stock', image: 'http://static.progressivemediagroup.com/uploads/imagelibrary/HSL-TPR008%20(CCS%20for%20Central%20Line%20-%20train%20photo).JPG', points: 2)
 
+t4 = Train.create!(stock: '1992 stock', image: 'https://upload.wikimedia.org/wikipedia/commons/8/85/London_Underground_1992_Stock_at_Theydon_Bois_by_tompagenet.jpg', points: 1)
+
+=begin
+   maintenance train
+   track recording train (776)
+   metropolitan a60
+   metropolitan a62
+
+ √ bakerloo    
+   central     
+ √ circle      
+ √ district    
+   hammersmith 
+   jubilee     
+   s7 (district & circle)
+   metropolitan s8
+   nothern     
+   piccadilly  
+   victoria    
+   waterloo    
+=end
 
 
 

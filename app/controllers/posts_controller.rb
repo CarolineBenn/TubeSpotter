@@ -8,38 +8,21 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @class = @post.line.downcase.partition(" ").first
-    @rolling_stock = Train.where(id: @post.train_id)
-
-
-
+    @rolling_stock = @post.train
   end
 
   def new
     @post = Post.new
-    @train = Train.all
+    # Y U NO WORK?
+    @rolling_stock = Train.all
+
     @line = ["Bakerloo", "Central", "Circle", "District", "Hammersmith & City", "Jubilee", "Metropolitan", "Northern", "Piccadilly", "Victoria", "Waterloo & City"]
   end
 
-
-=begin
- @beer = Beer.new(beer_params)
-   if @beer.save
-
-     @review = @beer.reviews.new(review_params)
-     @review.user = current_user
-     @review.pub_id = session[:current_pub_id]
-     @review.save
-     redirect_to @beer
-   else
-     redirect_to new_beer_path
-   end 
-=end
-
   def create
     @post = Post.new(post_params)
-    if @post.save
-      @post.user = current_user
-      @post.save 
+    @post.user = current_user
+    if @post.save 
       redirect_to @post
     else
       redirect_to new_post_path
@@ -48,17 +31,19 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    @train = Train.all
+    @rolling_stock = @post.train
     @line = ["Bakerloo", "Central", "Circle", "District", "Hammersmith & City", "Jubilee", "Metropolitan", "Northern", "Piccadilly", "Victoria", "Waterloo & City"]
   end
 
   def update
-    # Y U NO WORK???
-    # if @post.update(post_params)
-    #   redirect_to @post
-    # else
-    #   render 'edit'
-    # end
+    @post = Post.find(params[:id])
+    @post.train_id = @rolling_stock
+
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
   end
 
   def delete
