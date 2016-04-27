@@ -2,7 +2,7 @@ User.destroy_all
 Post.destroy_all
 Train.destroy_all
 
-u1 = User.create!(username: 'LineyB', first_name: 'Caroline', last_name: 'Benn', photo: 'https://scontent-lhr3-1.cdninstagram.com/t51.2885-15/e15/1740048_401520313324752_1881881684_n.jpg', location: 'Ealing, London', points: 0, email: 'lineybenn@gmail.com', password: 'password')
+u1 = User.create!(username: 'LineyB', first_name: 'Caroline', last_name: 'Benn', photo: 'https://scontent-lhr3-1.cdninstagram.com/t51.2885-15/e15/1740048_401520313324752_1881881684_n.jpg', location: 'Ealing, London', bio: "Love the tube, except for the Metropolitan line. This cannot be explained.", points: 0, email: 'lineybenn@gmail.com', password: 'password')
 
 u2 = User.create!(username: 'SvenTheMoose', first_name: 'Sven', last_name: 'Moose', photo: 'https://scontent-lhr3-1.xx.fbcdn.net/t31.0-8/11722174_10153858860739239_8277116210826384570_o.jpg', location: 'Ealing, London', points: 0, email: 'sven@moose.com', password: 'password')
 
@@ -41,6 +41,9 @@ t9 = Train.create!(stock:'1995 stock' , image:'image.jpg' , points: 2)  # Northe
 t9 = Train.create!(stock:'1973 stock' , image:'image.jpg' , points: 2)  # Piccadilly line
 t9 = Train.create!(stock:'2009 stock' , image:'image.jpg' , points: 2)  # Victoria line
 t9 = Train.create!(stock:'1967 stock' , image:'image.jpg' , points: 10) # Victoria line (old)
+
+# NOTE:
+# When seeding this file you need to comment out the update_user_points method in post.rb
 
 
 =begin

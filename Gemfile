@@ -4,6 +4,7 @@ gem 'httparty'
 gem 'foundation-rails', '~> 5.5.3'
 gem 'devise'
 gem 'carrierwave'
+gem 'genderize'
 
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
@@ -17,6 +18,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  gem 'quiet_assets'
 end
 
 group :development do

@@ -11,7 +11,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])  
-
+    points = @user.posts.map{ |post| post.train.points } 
+    @points = points.reduce(:+)
   end
 
   def new
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:username, :first_name, :last_name, :photo, :location, :points, :gender)  
+      params.require(:user).permit(:username, :first_name, :last_name, :photo, :location, :points, :gender, :bio)  
     end
 
 
